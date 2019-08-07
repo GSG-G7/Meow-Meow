@@ -2,11 +2,10 @@ const path = require('path');
 const express = require('express');
 const exhbs = require('express-handlebars');
 const router = require('./controlers/index');
-const request = require('./controlers/request');
 
 const app = express();
 
-require('env2')('.env')
+require('dotenv').config();
 app.disable('x-powered-by');
 
 app.use(express.static(path.join(__dirname, '..', 'public')));
