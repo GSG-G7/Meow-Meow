@@ -2,13 +2,14 @@
 const fetch = require('node-fetch');
 
 exports.post = (req,response)=> {
-    console.log(req.method)
     const value =req.body.input;
-    console.log(value);
-    const url = `https://api.thecatapi.com/v1/images/search?key=${process.env.MEOW_API_KEY}q=${value}`
+    const url = `https://api.thecatapi.com/v1/images/search?limit=3&key=${process.env.MEOW_API_KEY}q=${value}`
     fetch(url)
     .then(res=> res.json())
-    .then(json=> response.json(json))
+    .then(res=> response.render('home',{
+        image : res[0].url,
+        name : res[0].breeds[0].name
+    }))
 } 
 
 

@@ -2,14 +2,13 @@
 <header>
     <h1>{{appName}}</h1>
 </header>
-
 <section>
-    <form id="search" >
+    <form  action="/search" method="post" id="search" >
         <input id="userInput" type="text" value="" name = "input" placeholder= "Search for your favourite cat" required>
         <input type="submit">
     </form>
 </section>
 
-<section>
-    <div><img src ='' alt="cat photo"></div>
-</section>
+    <img src = {{image}}>
+    {{!-- <p>{{name}}</p> --}}
+
