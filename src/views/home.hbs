@@ -1,14 +1,16 @@
 
-<header>
-    <h1>{{appName}}</h1>
-</header>
-<section>
-    <form  action="/search" method="post" id="search" >
-        <input id="userInput" type="text" value="" name = "input" placeholder= "Search for your favourite cat" required>
-        <input type="submit">
+<section class="search">
+    <h1 class="search__h1">{{appName}}</h1>
+    <form  action="/search" method="post" id="search" class="search__form" autocomplete="off">
+        <input id="userInput" type="text" value="" name = "input" class="search__input" placeholder= "Search for your favourite cat" required>
+        <input type="submit"  class="search__button">
     </form>
 </section>
-
-    <img src = {{image}}>
-    {{!-- <p>{{name}}</p> --}}
-
+<section class="cat">
+    <div class="cat__detail">
+        {{#each cats}}
+            <img src = {{this.url}} class='cat__image'>
+        {{/each}}
+    </div>
+</section>
+    
