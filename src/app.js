@@ -2,6 +2,8 @@ const path = require('path');
 const express = require('express');
 const exhbs = require('express-handlebars');
 const router = require('./controlers/index');
+const request = require('./controlers/request');
+
 const app = express();
 
 require('env2')('.env')
@@ -28,6 +30,7 @@ app.get('/',(req,res)=> {
         appName: 'Cat Photos App'
     })
 })
+
 
 app.use(router)
 app.set('port', process.env.PORT || 5000)
