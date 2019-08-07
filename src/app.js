@@ -2,11 +2,11 @@ const path = require('path');
 const express = require('express');
 const exhbs = require('express-handlebars');
 const router = require('./controlers/index');
-const request = require('./controlers/request');
 
 const app = express();
 
-require('env2')('.env');
+// eslint-disable-next-line import/no-unresolved
+require('dotenv').config();
 
 app.disable('x-powered-by');
 
