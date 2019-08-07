@@ -3,7 +3,7 @@ const express = require('express');
 
 const {post}  = require('./request');
 
-const { clientError, serverError } = require('../views/helpers/error');
+const { clientError, serverError } = require('./error');
 
 const router = express.Router();
 
